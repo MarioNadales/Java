@@ -1,18 +1,31 @@
 public class Pizza {
   
-  private static String Estado;
-  private static String Tamaño;
-  private static String Tipo;
-  private static int TotalPedidas;
-  private static int TotalServidas;
-
-  public int getTotalPedidas() {
-    return Pizza.TotalPedidas;
+  private static int totalPedidas = 0;
+  private static int totalServidas = 0;
+  private String tamano;
+  private String tipo;
+  private String estado;
+  public Pizza(String tipo, String tamano) {
+  this.tipo = tipo;
+  this.tamano = tamano;
+  this.estado = "pedida";
+  Pizza.totalPedidas++;
+  }
+  public String toString() {
+  return "pizza " + this.tipo + " " + this.tamano + ", " + this.estado;
+  }
+  public static int getTotalPedidas() {
+  return Pizza.totalPedidas;
+  }
+  public static int getTotalServidas() {
+  return Pizza.totalServidas;
   }
   public void sirve() {
-    TotalServidas+=1;
+  if (this.estado.equals("pedida")) {
+  this.estado = "servida";
+  Pizza.totalServidas++;
+  } else {
+  System.out.println("esa pizza ya se ha servido");
   }
-  public int getTotalServidas(){
-    return Pizza.TotalServidas;
-  }
+}
 }
