@@ -1,4 +1,4 @@
-public class PruebaMovile {
+public class PruebaMovil {
   public static void main(String[] args) {
   
   Movil m1 = new Movil("678 11 22 33", "rata");

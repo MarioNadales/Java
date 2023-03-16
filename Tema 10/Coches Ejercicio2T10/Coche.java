@@ -1,5 +1,5 @@
 public class Coche extends Vehiculo {
-  private int cilindrada; // cilindrada en cm3
+  private int cilindrada; 
   public Coche(int c) {
     super();
   this.cilindrada = c;
