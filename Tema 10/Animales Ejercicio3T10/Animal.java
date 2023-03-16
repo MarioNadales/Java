@@ -1,16 +1,21 @@
 
-public class Animal {
+public abstract class Animal {
   
-  private static int edad;
-  private static int peso;
-  private static String sexo;
-  private static String Alimentacion;
-  private static String Movimiento;
+  private Sexo sexo;
+  public Animal () {
+  this.sexo = Sexo.MACHO;
+  }
+  public Animal (Sexo s) {
+  this.sexo = s;
+  }
+  public Sexo getSexo() {
+  return this.sexo;
+  }
+  public void duerme() {
+  System.out.println("Zzzzzzz");
+  }
+  public void come(String comida) {
+  System.out.println("Estoy comiendo " + comida);
+  }
+  }
   
-  public String getAlimentacion(){
-    return Animal.Alimentacion;
-  }
-  public String getMovimiento(){
-    return Animal.Movimiento;
-  }
-}
