@@ -17,7 +17,6 @@ public class TarjetaRegalo {
   void gasta(double gasto) {
   if (gasto > saldo) {
   System.out.printf("No tiene suficiente saldo para gastar %.2f€\n", gasto);
-  Apéndice E. Soluciones a los ejercicios 678
   } else {
   saldo -= gasto;
   }
