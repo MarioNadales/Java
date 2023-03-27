@@ -1,4 +1,3 @@
-
 public class Bicicleta extends Vehiculo {
   private int piñones; 
   public Bicicleta(int p) {
