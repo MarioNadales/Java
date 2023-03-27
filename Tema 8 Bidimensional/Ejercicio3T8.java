@@ -1,3 +1,5 @@
+//Programa que crea un array de numeros entre 100 y 999 y calcula los sumatorios por filas y columnas
+//@Author Mario Nadales
 import java.util.Scanner;
 public class Ejercicio3T8 {
 	

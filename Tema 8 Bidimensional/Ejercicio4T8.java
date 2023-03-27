@@ -1,3 +1,5 @@
+//Programa que crea un array de numeros entre 100 y 999 y calcula los sumatorios por filas y columnas con "delay" a la hora de mostrar las sumas
+//@Author Mario Nadales
 import java.util.Scanner;
 public class Ejercicio4T8 {
 	

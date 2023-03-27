@@ -1,3 +1,5 @@
+//Forma un array con los numeros que indicas en el codigo
+//@Author Mario Nadales
 public class Ejercicio1T8 {
 	
   public static void main (String[] args) {
