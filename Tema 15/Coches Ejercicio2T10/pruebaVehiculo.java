@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class pruebaVehiculo {
   public static void main(String[] args) {
+    
     Scanner s= new Scanner(System.in);
     
     
@@ -9,15 +10,15 @@ public class pruebaVehiculo {
     System.out.println("Y cual es la cilindrada de tu coche ");
     int cilin=s.nextInt();
 
-      int opcion = 0;
+      String opcion;
+      int opcionNum = 0;
 
     int km=0;
     
     Bicicleta bici = new Bicicleta(piñones);
-    
     Coche coche = new Coche(cilin);
     
-    while (opcion != 9) {
+    while (opcionNum != 11) {
     System.out.println("1. Mostrar piñones");
     System.out.println("2. Mostrar cilindrada");
     System.out.println("3. Desplazarse en bici");
@@ -31,9 +32,15 @@ public class pruebaVehiculo {
     System.out.println("11. Salir");
     System.out.println("Elige una opción (1-10): ");
     
-    opcion =s.nextInt();
+    opcion =s.nextLine();
+
+    if (isNumeric(opcion)) {
+    opcionNum=Integer.parseInt(opcion);
+    }else {
+      opcionNum=19;
+    }
     
-    switch (opcion) {
+    switch (opcionNum) {
     case 1:
     System.out.print("Los piñones de la bici son: "+piñones);
     
@@ -82,9 +89,11 @@ public class pruebaVehiculo {
     km = s.nextInt();
     coche.recorre(km);
     bici.recorre(km);
-    default:
+    default:System.out.print("Has introducido una opcion no valida intentelo de nuevo");
     }
     }
-  }
+    }private static boolean isNumeric(String str){
+      return str != null && str.matches("[0-9.]+");}
 }
+
 
