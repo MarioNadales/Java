@@ -16,13 +16,13 @@ public class ExpocochesCampanillas {
   System.out.println("3. Salir");
   System.out.println("Elige una opción: ");
   opcion = s.nextLine();
-  // Con el try y el catch evitamos la aparicion de un error al introducir una letra en la variable de opcion
+  // En esta variante el hacemos una llamada al objeto e que contiene los errores y los muestro por pantalla
   try {
     opcionNum=Integer.parseInt(opcion);
   }catch (Exception e) {
-    System.out.print("Exception "+ e.getClass());
-    System.out.print("Error "+ e.getMessage());
-    opcionNum=5;
+    System.out.println("Exception "+ e.getClass());
+    System.out.println("Error "+ e.getMessage());
+    
   }
   if (opcionNum == 1) {
   System.out.println("En la zona principal hay " + principal.getEntradasPorVender());
@@ -34,14 +34,15 @@ public class ExpocochesCampanillas {
   System.out.println("2. Compra-venta");
   System.out.println("3. Vip");
   System.out.print("Elige la zona para la que quieres comprar las entradas: ");
-  // Con el try y el catch evitamos la aparicion de un error al introducir una letra en la variable de opcion2
+  // En esta variante el hacemos una llamada al objeto e que contiene los errores y los muestro por pantalla
   do {
     opcion2 = s.nextLine();
     try {
       opcionNum=Integer.parseInt(opcion2);
     }catch (Exception e) {
+      System.out.println("Exception "+ e.getClass());
+      System.out.println("Error "+ e.getMessage());
       opcionNum=5;
-      System.out.println("Numero incorrecto vuelva a intentarlo : ");
     }
 } while (opcionNum==5);
   System.out.print("¿Cuántas entradas quieres? ");
