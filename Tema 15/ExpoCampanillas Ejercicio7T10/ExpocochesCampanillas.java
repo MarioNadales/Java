@@ -1,32 +1,51 @@
+import java.util.Scanner;
 public class ExpocochesCampanillas {
   public static void main(String[] args) {
+  Scanner s = new Scanner(System.in);
   Zona principal = new Zona(1000);
   Zona compraVenta = new Zona(200);
   Zona vip = new Zona(25);
-  int opcion = 0;
-  int opcion2 = 0;
+  String opcion;
+  int opcionNum=0;
+  String opcion2;
   int n = 0;
   do {
-  System.out.println("\n\nEXPOCOCHES CAMPANILLAS");
+  System.out.println("EXPOCOCHES CAMPANILLAS");
   System.out.println("1. Mostrar número de entradas libres");
   System.out.println("2. Vender entradas");
   System.out.println("3. Salir");
   System.out.println("Elige una opción: ");
-  opcion = Integer.parseInt(System.console().readLine());
-  if (opcion == 1) {
-  System.out.println("\n\nEn la zona principal hay " + principal.getEntradasPorVender());
+  opcion = s.nextLine();
+  // Con el try y el catch evitamos la aparicion de un error al introducir una letra en la variable de opcion
+  try {
+    opcionNum=Integer.parseInt(opcion);
+  }catch (Exception e) {
+    opcionNum=0;
+    System.out.println("Numero incorrecto");
+  }
+  if (opcionNum == 1) {
+  System.out.println("En la zona principal hay " + principal.getEntradasPorVender());
   System.out.println("En la zona de compra venta hay " + compraVenta.getEntradasPorVender());
   System.out.println("En la zona vip hay " + vip.getEntradasPorVender());
   }
-  if (opcion == 2) {
-  System.out.println("\n\n1. Principal");
+  if (opcionNum == 2) {
+  System.out.println("1. Principal");
   System.out.println("2. Compra-venta");
   System.out.println("3. Vip");
   System.out.print("Elige la zona para la que quieres comprar las entradas: ");
-  opcion2 = Integer.parseInt(System.console().readLine());
+  // Con el try y el catch evitamos la aparicion de un error al introducir una letra en la variable de opcion2
+  do {
+    opcion2 = s.nextLine();
+    try {
+      opcionNum=Integer.parseInt(opcion2);
+    }catch (Exception e) {
+      opcionNum=5;
+      System.out.println("Numero incorrecto vuelva a intentarlo : ");
+    }
+} while (opcionNum==5);
   System.out.print("¿Cuántas entradas quieres? ");
   n = Integer.parseInt(System.console().readLine());
-  switch (opcion2) {
+  switch (opcionNum) {
   case 1:
   principal.vender(n);
   break;
@@ -38,8 +57,9 @@ public class ExpocochesCampanillas {
   break;
   default:
   }
-  }
-  } while (opcion < 3); 
+  
+}
+  } while (opcionNum<3); 
 }
 }
 
