@@ -89,7 +89,7 @@ public class pruebaVehiculo {
     km = s.nextInt();
     coche.recorre(km);
     bici.recorre(km);
-    default:System.out.print("Has introducido una opcion no valida intentelo de nuevo");
+    default:System.out.println("Has introducido una opcion no valida intentelo de nuevo");
     }
     }
     }private static boolean isNumeric(String str){
