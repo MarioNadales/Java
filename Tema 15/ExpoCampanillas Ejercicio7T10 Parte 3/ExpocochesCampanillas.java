@@ -20,8 +20,9 @@ public class ExpocochesCampanillas {
   try {
     opcionNum=Integer.parseInt(opcion);
   }catch (Exception e) {
-    opcionNum=0;
-    System.out.println("Numero incorrecto");
+    System.out.print("Exception "+ e.getClass());
+    System.out.print("Error "+ e.getMessage());
+    opcionNum=5;
   }
   if (opcionNum == 1) {
   System.out.println("En la zona principal hay " + principal.getEntradasPorVender());
@@ -39,7 +40,6 @@ public class ExpocochesCampanillas {
     try {
       opcionNum=Integer.parseInt(opcion2);
     }catch (Exception e) {
-
       opcionNum=5;
       System.out.println("Numero incorrecto vuelva a intentarlo : ");
     }

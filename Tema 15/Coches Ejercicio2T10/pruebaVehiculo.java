@@ -33,7 +33,7 @@ public class pruebaVehiculo {
     System.out.println("Elige una opción (1-10): ");
     
     opcion =s.nextLine();
-
+// Con la funcion isnumeric comprobamos que el numero introducido sea un numero entero
     if (isNumeric(opcion)) {
     opcionNum=Integer.parseInt(opcion);
     }else {
